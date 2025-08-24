@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
 import { Form, Input, Button, Card, message } from 'antd';
 import { UserOutlined, MailOutlined } from '@ant-design/icons';
+import { ContactForm } from '../model/types';
 import axios from 'axios';
-
 const { TextArea } = Input;
 
-interface ContactForm {
-  name: string;
-  email: string;
-  message: string;
-}
-
-const Contact: React.FC = () => {
+export const Contact: FC = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -77,5 +71,3 @@ const Contact: React.FC = () => {
     </Card>
   );
 };
-
-export default Contact;

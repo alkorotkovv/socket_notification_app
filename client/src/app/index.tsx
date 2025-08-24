@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'antd/dist/reset.css';
 import { Layout } from 'antd';
@@ -8,7 +8,7 @@ import HeaderWidget from '@widgets/Header/Header';
 import { WebSocketProvider } from '@app/providers/Websocket/WebSocketProvider';
 const { Content } = Layout;
 
-const App: React.FC = () => {
+const App: FC = () => {
   return (
     <WebSocketProvider>
       <Router>

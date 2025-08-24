@@ -1,10 +1,6 @@
-export interface NotificationFormProps {
-  onSuccess?: () => void;
-}
-
 export type levelType = 'info' | 'warning' | 'critical';
 
-export type PageType = {
+export interface pageType {
   id: number;
   name: string; 
 };
@@ -21,3 +17,7 @@ export interface notificationTemplateType {
   level: levelType;
   message: string;
 }
+
+export interface NotificationFormProps {
+  onSuccess?: () => void;
+};

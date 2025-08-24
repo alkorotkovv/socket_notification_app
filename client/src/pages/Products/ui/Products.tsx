@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Card, Spin, Alert, Row, Col } from 'antd';
 import { ShoppingOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import { Product } from '../model/types';
 import axios from 'axios';
 
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-}
-
-const Products: React.FC = () => {
+export const Products: FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -64,5 +58,3 @@ const Products: React.FC = () => {
     </div>
   );
 };
-
-export default Products;

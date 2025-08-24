@@ -1,44 +1,27 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { Modal, Space, Typography } from 'antd';
 import { WarningOutlined, InfoCircleOutlined } from '@ant-design/icons';
-import { io, Socket } from 'socket.io-client';
-import { TrackingPageProps } from '../types';
-
+import { TrackingPageProps } from '../model/types';
+import { useNotification } from '../model/useNotification';
 const { Text } = Typography;
 
-const TrackingPage: FC<TrackingPageProps> = ({ component, uid, page_id }) => {
-  const CONST_WEBSOCKET_PAGE_URL = `http://localhost:3500/page_${page_id}`;
+export const TrackingPage: FC<TrackingPageProps> = ({ component, uid, page_id }) => {
   
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [notification, setNotification] = useState({ message: '', level: '' });
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const {message, level} = useNotification(page_id, uid);
 
   useEffect(() => {
-    console.log(page_id);
-
-    const pageSocket: Socket = io(CONST_WEBSOCKET_PAGE_URL);
-
-    // pageSocket.on('connect', () => {
-    //   pageSocket.emit('session_start', { uid, page_id });
-    // });
-
-    pageSocket.on('notification', (data: { message: string, level: string }) => {
-      console.log('Получили уведомление');
-      setIsModalVisible(true);
-      setNotification({ message: data.message, level: data.level });
-    });
-
-    return () => {
-      // pageSocket.emit('session_end', { uid, page_id });
-      pageSocket.disconnect();
-    };
-  }, [page_id]);
+    if (message) {
+      setIsModalVisible(true);   
+    }
+  }, [message]);
 
   const handleCloseModal = () => {
     setIsModalVisible(false);
   };
 
   const renderIcon = () => {
-    switch (notification.level) {
+    switch (level) {
       case 'info':
         return <InfoCircleOutlined style={{ color: 'blue', fontSize: '48px' }} />;
       case 'warning':
@@ -64,12 +47,10 @@ const TrackingPage: FC<TrackingPageProps> = ({ component, uid, page_id }) => {
         <div style={{ textAlign: 'center', padding: '20px 0' }}>
           <Space direction="vertical" size="middle" style={{ display: 'flex', alignItems: 'center' }}>
             {renderIcon()}
-            <Text style={{ fontSize: '16px' }}>{notification.message}</Text>
+            <Text style={{ fontSize: '16px' }}>{message}</Text>
           </Space>
         </div>
       </Modal>
     </>
   );
 };
-
-export default TrackingPage;

@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Card, Statistic, Row, Col, Spin, Alert } from 'antd';
 import { UserOutlined, ClockCircleOutlined } from '@ant-design/icons';
+import { HomeData } from '../model/types';
 import axios from 'axios';
 
-interface HomeData {
-  message: string;
-  serverTime: string;
-  visitCount: number;
-}
-
-const Home: React.FC = () => {
+export const Home: FC = () => {
   const [data, setData] = useState<HomeData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -61,5 +56,3 @@ const Home: React.FC = () => {
     </div>
   );
 };
-
-export default Home;

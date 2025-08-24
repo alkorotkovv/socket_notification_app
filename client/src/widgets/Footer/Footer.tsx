@@ -1,12 +1,12 @@
-import React from 'react';
+import { FC } from 'react';
 import { Layout } from 'antd';
 const { Footer } = Layout;
 
-const FooterWidget: React.FC = () => {
+const FooterWidget: FC = () => {
 
   return (
     <Footer style={{ textAlign: 'center' }}>
-      React + Express App ©2023
+      React + Express App ©2025
     </Footer>
   );
 };

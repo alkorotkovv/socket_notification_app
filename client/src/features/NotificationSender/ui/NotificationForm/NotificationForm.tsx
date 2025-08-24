@@ -18,16 +18,15 @@ import {
   WarningOutlined,
   InfoCircleOutlined,
 } from '@ant-design/icons';
-import { useAppWebsocket } from "@shared/useAppWebsocket";
-import { CONST_NOTIFICATION_TEMPLATES } from "../../lib/constants";
+import { useAppWebsocket } from "@shared/hooks/useAppWebsocket";
+import { CONST_NOTIFICATION_TEMPLATES } from "../../model/constants";
 
 import {
   levelType,
-  PageType,
+  pageType,
   notificationDataType,
   notificationTemplateType,
-  NotificationFormProps
-} from '../../types';
+} from '../../model/types';
 
 const { TextArea } = Input;
 const { Option } = Select;
@@ -39,7 +38,7 @@ const initValues: notificationDataType = {
   pages: []
 }
 
-export const NotificationForm: FC<NotificationFormProps> = ({ onSuccess }) => {
+export const NotificationForm: FC = () => {
   const { socket } = useAppWebsocket();
   const [isSending, setIsSending] = useState<boolean>(false);
   const [levelValue, setLevelValue] = useState<levelType>(initValues.level)
@@ -48,7 +47,7 @@ export const NotificationForm: FC<NotificationFormProps> = ({ onSuccess }) => {
   const countdownRef = useRef<NodeJS.Timeout | null>(null);
   const [countdown, setCountdown] = useState<number>(0);
   const isCountdown = countdown > 0
-  const [pagesData, setPagesData] = useState<PageType[]>([]);
+  const [pagesData, setPagesData] = useState<pageType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 

@@ -1,8 +1,6 @@
-const {pages} = require('../data/mockData')
+const {pages} = require('../mockData')
 
 const handleSocketConnection = (io) => {
-
-  // const nsp = io.of('/app')
 
   // Хранилище для namespace страниц
   const pageNamespaces = {};
@@ -55,15 +53,11 @@ const handleSocketConnection = (io) => {
 
   createPagesNamespaces()
 
-
   io.on('connection', (socket) => {
     console.log('Пользователь подключился:', socket.id);
 
+    // Обработка уведомлений от клиента
     socket.on('notification', async (data) => {
-
-        console.log('notification')
-        console.log(data)
-
         const { pages, message, level } = data;
 
         pages?.forEach(pageId => {
@@ -71,7 +65,6 @@ const handleSocketConnection = (io) => {
           pageNsp.emit('notification', { message, level });
           console.log(`Отправлено в namespace страницы ${pageId}`);
         });
-
       })
 
     // Обработка отключения клиента
@@ -80,15 +73,6 @@ const handleSocketConnection = (io) => {
       io.emit('userLeft', { userId: socket.id });
     });
 
-    // Обработка уведомлений о действиях пользователя
-    socket.on('userAction', (data) => {
-      console.log('Действие пользователя:', data);
-      socket.broadcast.emit('userActivity', {
-        userId: socket.id,
-        action: data.action,
-        time: new Date().toLocaleTimeString()
-      });
-    });
   });
 };
 

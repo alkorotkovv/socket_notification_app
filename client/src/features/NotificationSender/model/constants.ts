@@ -1,6 +1,5 @@
-import {
-  notificationTemplateType,
-} from '../types';
+import { notificationTemplateType } from './types';
+
 export const CONST_NOTIFICATION_TEMPLATES: notificationTemplateType[] = [
   {
     id: 'restart-10min',

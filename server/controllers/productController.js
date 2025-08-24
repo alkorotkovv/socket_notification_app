@@ -1,4 +1,4 @@
-const { products } = require('../data/mockData');
+const { products } = require('../mockData');
 
 const getProducts = (req, res) => {
   // Имитация задержки загрузки

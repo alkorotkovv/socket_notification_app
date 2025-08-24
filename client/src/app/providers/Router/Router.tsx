@@ -1,11 +1,12 @@
+import { FC } from 'react'
 import { Routes, Route } from 'react-router-dom';
-import Home from '@pages/Home';
-import Products from '@pages/Products';
-import ProductDetail from '@pages/ProductDetail';
-import Contact from '@pages/Contact';
-import TrackingPage from '@features/TrackingPage/ui/TrackingPage';
+import { Home } from '@pages/Home';
+import { Products } from '@pages/Products';
+import { ProductDetail } from '@pages/ProductDetail';
+import { Contact } from '@pages/Contact';
+import { TrackingPage } from '@features/TrackingPage';
 
-const AppRoutes: React.FC = () => {
+const AppRoutes: FC = () => {
   return (
     <Routes>
       <Route path="/" element={<TrackingPage key="home" component={<Home />} uid={100} page_id={0}/>}/>

@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Card, Spin, Alert, Button } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
+import { Product } from '../model/types';
 import axios from 'axios';
 
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-}
-
-const ProductDetail: React.FC = () => {
+export const ProductDetail: FC = () => {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -65,5 +59,3 @@ const ProductDetail: React.FC = () => {
     </div>
   );
 };
-
-export default ProductDetail;

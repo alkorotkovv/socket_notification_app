@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
 import { Button, Modal } from 'antd';
 import { NotificationOutlined } from '@ant-design/icons';
-import { NotificationForm } from '../NotificationForm/NotificationForm';
+import { NotificationForm } from '@features/NotificationSender/index';
 
-const NotificationButton: React.FC = () => {
+export const NotificationButton: FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const showModal = () => {
@@ -11,10 +11,6 @@ const NotificationButton: React.FC = () => {
   };
 
   const handleCancel = () => {
-    setIsModalVisible(false);
-  };
-
-  const handleSuccess = () => {
     setIsModalVisible(false);
   };
 
@@ -37,10 +33,8 @@ const NotificationButton: React.FC = () => {
         width={900}
         destroyOnHidden
       >
-        <NotificationForm onSuccess={handleSuccess} />
+        <NotificationForm/>
       </Modal>
     </>
   );
 };
-
-export default NotificationButton;
