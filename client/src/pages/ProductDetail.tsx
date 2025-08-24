@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Card, Spin, Alert, Button } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 interface Product {

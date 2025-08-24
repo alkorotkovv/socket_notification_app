@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from '../../../pages/Home';
-import Products from '../../../pages/Products';
-import ProductDetail from '../../../pages/ProductDetail';
-import Contact from '../../../pages/Contact';
-import TrackingPage from '../../../features/TrackingPage/ui/TrackingPage';
+import Home from '@pages/Home';
+import Products from '@pages/Products';
+import ProductDetail from '@pages/ProductDetail';
+import Contact from '@pages/Contact';
+import TrackingPage from '@features/TrackingPage/ui/TrackingPage';
 
 const AppRoutes: React.FC = () => {
   return (

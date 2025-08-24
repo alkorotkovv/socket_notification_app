@@ -14,12 +14,11 @@ import {
   Card,
   Typography
 } from 'antd';
-
 import {
   WarningOutlined,
   InfoCircleOutlined,
 } from '@ant-design/icons';
-import { useAppWebsocket } from "../../../../shared/useAppWebsocket";
+import { useAppWebsocket } from "@shared/useAppWebsocket";
 import { CONST_NOTIFICATION_TEMPLATES } from "../../lib/constants";
 
 import {

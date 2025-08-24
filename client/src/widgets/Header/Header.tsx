@@ -1,10 +1,10 @@
 import React from 'react';
-import { Layout } from 'antd';
-import { Menu, Space } from 'antd';
+import styles from './Header.module.css';
+import { Layout, Menu, Space } from 'antd';
 import { HomeOutlined, ShoppingOutlined, ContactsOutlined } from '@ant-design/icons';
 import { Link, useLocation } from 'react-router-dom';
-import NotificationButton from '../../features/NotificationSender/ui/NotificationButton/NotificationButton';
-import styles from './Header.module.css';
+import NotificationButton from '@features/NotificationSender/ui/NotificationButton/NotificationButton';
+
 const { Header } = Layout;
 
 const HeaderWidget: React.FC = () => {

@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Layout } from 'antd';
-import AppRoutes from './providers/Router/Router';
-import { WebSocketProvider } from './providers/Websocket/WebSocketProvider';
 import 'antd/dist/reset.css';
-import FooterWidget from '../widgets/Footer/Footer';
-import HeaderWidget from '../widgets/Header/Header';
-
+import { Layout } from 'antd';
+import AppRoutes from '@app/providers/Router/Router';
+import FooterWidget from '@widgets/Footer/Footer';
+import HeaderWidget from '@widgets/Header/Header';
+import { WebSocketProvider } from '@app/providers/Websocket/WebSocketProvider';
 const { Content } = Layout;
 
 const App: React.FC = () => {
