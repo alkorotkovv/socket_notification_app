@@ -69,6 +69,7 @@ export const NotificationForm: FC<NotificationFormProps> = ({ onSuccess }) => {
   }, []);
 
   const sendNotification = async () => {
+
     setIsSending(true);
 
     const notificationData: notificationDataType = {
@@ -78,12 +79,12 @@ export const NotificationForm: FC<NotificationFormProps> = ({ onSuccess }) => {
     };
 
     try {
-      socket?.emit('reboot_server', notificationData);
+      socket?.emit('notification', notificationData);
       setTimeout(() => {
         message.success('Уведомление успешно отправлено')
         resetForm()
         setIsSending(false);
-        onSuccess?.();
+        // onSuccess?.();
       }, 500);
     } catch (error) {
       console.error('Ошибка отправки уведомления:', error);
@@ -113,7 +114,7 @@ export const NotificationForm: FC<NotificationFormProps> = ({ onSuccess }) => {
   };
 
   const startCountdown = () => {
-    const initialCountdown = 10;
+    const initialCountdown = 5;
     setCountdown(initialCountdown);
     setIsSending(true);
 
