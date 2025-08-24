@@ -1,5 +1,4 @@
 const {pages} = require('../data/mockData')
-const {getPages} = require('./appController')
 
 const handleSocketConnection = (io) => {
 
@@ -44,8 +43,8 @@ const handleSocketConnection = (io) => {
       // const pages = await getPages();
       console.log('Найдены страницы в БД:', pages);
 
-      pages.forEach(id => {
-        createPageNamespace(id);
+      pages.forEach(page => {
+        createPageNamespace(page.id);
       });
 
       console.log(`Создано ${pages.length} namespace для страниц`);

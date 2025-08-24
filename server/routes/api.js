@@ -8,7 +8,7 @@ const { getProducts, getProductById } = require('../controllers/productControlle
 const { submitContact } = require('../controllers/contactController');
 
 // Маршруты API
-router.get('/app', getPages);
+router.get('/pages', getPages);
 router.get('/home', getHomeData);
 router.get('/products', getProducts);
 router.get('/products/:id', getProductById);

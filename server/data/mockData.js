@@ -10,7 +10,12 @@ const posts = [
   { id: 2, title: 'Вторая статья', content: 'Содержание второй статьи', date: '2023-02-20' }
 ];
 
-const pages = [0, 1, 2, 3]
+const pages = [
+  { id: 0, name: 'Home' },
+  { id: 1, name: 'Products' },
+  { id: 2, name: 'ProductDetail' },
+  { id: 3, name: 'Contact' }
+]
 
 module.exports = {
   products,

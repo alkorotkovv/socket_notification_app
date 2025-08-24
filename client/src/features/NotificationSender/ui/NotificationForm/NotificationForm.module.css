@@ -1,0 +1,75 @@
+.label {
+    display: flex;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.list {
+    margin: 0;
+    height: 300px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 5px;
+    overflow-y: auto;
+}
+
+.list::-webkit-scrollbar {
+    width: 6px;
+}
+.list::-webkit-scrollbar-track {
+    background: transparent;
+}
+.list::-webkit-scrollbar-thumb {
+    background-color: rgba(161, 160, 160, 0.91);
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 10px;
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+.item__label {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px;
+    line-height: 1;
+}
+
+.space {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button {
+    display: flex;
+    padding: 0;
+    color: #1f2a81;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.button:hover {
+    cursor: pointer;
+    color: #636fc0 !important;
+}
+
+.footer {
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
