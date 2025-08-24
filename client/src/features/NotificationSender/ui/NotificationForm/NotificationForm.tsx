@@ -64,6 +64,7 @@ export const NotificationForm: FC = () => {
     };
 
     fetchData();
+    
   }, []);
 
   const sendNotification = async () => {

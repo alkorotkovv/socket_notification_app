@@ -31,7 +31,7 @@ export const NotificationButton: FC = () => {
         onCancel={handleCancel}
         footer={null}
         width={900}
-        destroyOnHidden
+        // destroyOnHidden
       >
         <NotificationForm/>
       </Modal>
