@@ -1,27 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Layout } from 'antd';
-import Navigation from './components/Navigation/Navigation';
-import AppRoutes from './routes/AppRoutes';
+import AppRoutes from './providers/Router/Router';
 import { WebSocketProvider } from './providers/Websocket/WebSocketProvider';
 import 'antd/dist/reset.css';
+import FooterWidget from '../widgets/Footer/Footer';
+import HeaderWidget from '../widgets/Header/Header';
 
-const { Header, Content, Footer } = Layout;
+const { Content } = Layout;
 
-function App() {
+const App: React.FC = () => {
   return (
     <WebSocketProvider>
       <Router>
         <Layout style={{ minHeight: '100vh' }}>
-          <Header>
-            <Navigation />
-          </Header>
+          <HeaderWidget />
           <Content style={{ padding: '0 50px', marginTop: 20 }}>
             <AppRoutes />
           </Content>
-          <Footer style={{ textAlign: 'center' }}>
-            React + Express App ©2023
-          </Footer>
+          <FooterWidget />
         </Layout>
       </Router>
     </WebSocketProvider>

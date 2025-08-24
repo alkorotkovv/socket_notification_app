@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
 import { NotificationOutlined } from '@ant-design/icons';
-import { NotificationForm } from '../NotificationSender/ui/NotificationForm/NotificationForm';
+import { NotificationForm } from '../NotificationForm/NotificationForm';
 
 const NotificationButton: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -35,7 +35,7 @@ const NotificationButton: React.FC = () => {
         onCancel={handleCancel}
         footer={null}
         width={900}
-        destroyOnClose
+        destroyOnHidden
       >
         <NotificationForm onSuccess={handleSuccess} />
       </Modal>

@@ -1,6 +1,6 @@
 import {
   notificationTemplateType,
-} from '../ui/NotificationForm/types';
+} from '../types';
 export const CONST_NOTIFICATION_TEMPLATES: notificationTemplateType[] = [
   {
     id: 'restart-10min',

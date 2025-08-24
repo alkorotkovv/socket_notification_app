@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Input, Button, Alert, Card, message } from 'antd';
-import { UserOutlined, MailOutlined, MessageOutlined } from '@ant-design/icons';
+import { Form, Input, Button, Card, message } from 'antd';
+import { UserOutlined, MailOutlined } from '@ant-design/icons';
 import axios from 'axios';
 
 const { TextArea } = Input;

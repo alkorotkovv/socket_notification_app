@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { List, Card, Spin, Alert, Row, Col } from 'antd';
+import { Card, Spin, Alert, Row, Col } from 'antd';
 import { ShoppingOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import axios from 'axios';

@@ -28,7 +28,7 @@ import {
   notificationDataType,
   notificationTemplateType,
   NotificationFormProps
-} from './types';
+} from '../../types';
 
 const { TextArea } = Input;
 const { Option } = Select;

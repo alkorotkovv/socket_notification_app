@@ -1,12 +1,6 @@
 import {FC, useEffect, useState} from 'react';
-import styles from './TrackingPage.module.css';
-import {TrackingPageProps} from './types'
+import {TrackingPageProps} from '../types'
 import {io, Socket} from "socket.io-client";
-// import Popup from "@/shared/ui/Popup/Popup";
-import {
-  WarningOutlined,
-  InfoCircleOutlined,
-} from '@ant-design/icons';
 
 const TrackingPage: FC<TrackingPageProps> = ({ component, uid, page_id }) => {
 
@@ -40,16 +34,6 @@ const TrackingPage: FC<TrackingPageProps> = ({ component, uid, page_id }) => {
   return (
     <>
       {component}
-      {/* {isPopupOpened &&
-        <Popup title={'Уведомление'} isOpen={true} onClose={() => setIsPopupOpened(false)}>
-          <div className={styles.content}>
-            {notification.level === 'info' && <InfoCircleOutlined style={{ color: 'blue', fontSize: '50px' }} />}
-            {notification.level === 'warning' && <WarningOutlined style={{ color: 'orange', fontSize: '50px' }} />}
-            {notification.level === 'critical' && <WarningOutlined style={{ color: 'red', fontSize: '50px' }} />}
-            <span className={styles.text}>{notification.message}</span>
-          </div>
-        </Popup>
-      } */}
     </>
   );
 };

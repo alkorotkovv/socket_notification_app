@@ -11,10 +11,10 @@ const posts = [
 ];
 
 const pages = [
-  { id: 0, name: 'Home' },
-  { id: 1, name: 'Products' },
-  { id: 2, name: 'ProductDetail' },
-  { id: 3, name: 'Contact' }
+  { id: 0, name: 'Главная' },
+  { id: 1, name: 'Товары' },
+  { id: 2, name: 'Детали товара' },
+  { id: 3, name: 'Контакты' }
 ]
 
 module.exports = {
