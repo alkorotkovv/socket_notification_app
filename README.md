@@ -20,6 +20,12 @@
 - NodeJs (Express)
 - WebSocket (SocketIO)
 
+## Установка:
+В корне проекта, в папке client и папке server 
+***npm install*** - установка необходимых пакетов
+Толькко в корне проекта
+***npm run dev*** - запуск проекта
+
 #Общий вид
 ![alt text](img/1.png)
 
